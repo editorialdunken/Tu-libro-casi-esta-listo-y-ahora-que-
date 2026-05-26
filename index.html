@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu libro casi está listo: ¿y ahora qué? · Editorial Dunken</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul:#004aad;--azul-osc:#003c8f;--azul-claro:#0a59c4;
+    --naranja:#f88f38;--naranja-osc:#d8730f;
+    --naranja-suave:#fdeddc;--naranja-claro:#fef5ea;
+    --azul-suave:#e9f0fa;--azul-medio:#c6d6ee;
+    --crema:#f5f6f8;--papel:#ffffff;
+    --tinta:#1c2433;--gris:#5d6675;--linea:#e6e9ef;
+    --verde:#1f9d55;--verde-suave:#e4f4e9;--verde-osc:#178045;
+    --rojo:#c0392b;--rojo-suave:#fbe9e7;
+    --sombra:0 16px 46px -18px rgba(0,40,90,.26);
+    --sombra-sm:0 7px 22px -10px rgba(0,40,90,.2);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Open Sans',sans-serif;color:var(--tinta);background:var(--crema);line-height:1.62;-webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--naranja);color:#fff;}
+  a{color:var(--azul);}
+
+  /* HERO */
+  .hero{position:relative;background:linear-gradient(158deg,#003c8f 0%,#004aad 52%,#0a59c4 100%);color:#fff;padding:62px 24px 150px;overflow:hidden;text-align:center;}
+  .blob{position:absolute;border-radius:50%;pointer-events:none;}
+  .blob.b1{width:360px;height:360px;background:radial-gradient(circle,rgba(248,143,56,.26),transparent 70%);top:-140px;right:-110px;}
+  .blob.b2{width:300px;height:300px;background:radial-gradient(circle,rgba(255,255,255,.14),transparent 70%);bottom:-120px;left:-80px;}
+  .float-el{position:absolute;opacity:.5;animation:bob 6.5s ease-in-out infinite;}
+  .float-el.f1{top:56px;left:9%;animation-delay:0s;}
+  .float-el.f2{bottom:124px;right:10%;animation-delay:2s;}
+  .float-el.f3{top:128px;right:14%;animation-delay:3.8s;}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-7deg);}50%{transform:translateY(-13px) rotate(3deg);}}
+  .hero-inner{position:relative;max-width:760px;margin:0 auto;z-index:3;}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.42);border-radius:40px;padding:7px 18px 7px 14px;font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;font-weight:600;margin-bottom:24px;}
+  .badge svg{width:15px;height:15px;}
+  .hero h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2.2rem,5.6vw,3.6rem);line-height:1.08;margin-bottom:16px;}
+  .hero h1 em{color:#ffd9b3;font-style:italic;text-decoration:underline;text-decoration-color:rgba(248,143,56,.6);text-underline-offset:6px;text-decoration-thickness:3px;}
+  .hero .lead{font-size:clamp(1rem,2.3vw,1.18rem);color:#d7e3f5;max-width:570px;margin:0 auto 6px;}
+  .hero-mark{margin-top:30px;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7);}
+  .scroll-cue{position:absolute;bottom:80px;left:50%;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,.8);animation:bob2 2s ease-in-out infinite;}
+  @keyframes bob2{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(7px);}}
+
+  /* LAYOUT */
+  .wrap{max-width:900px;margin:-95px auto 0;padding:0 20px 80px;position:relative;z-index:5;}
+  .card{background:var(--papel);border-radius:22px;box-shadow:var(--sombra);padding:44px 42px;margin-bottom:26px;border:1px solid var(--linea);}
+  .sec-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .sec-ico{flex-shrink:0;width:54px;height:54px;border-radius:16px;background:var(--naranja-suave);display:flex;align-items:center;justify-content:center;}
+  .sec-ico svg{width:29px;height:29px;}
+  .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--naranja-osc);margin-bottom:3px;}
+  h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.5rem,3.6vw,2.05rem);color:var(--azul);line-height:1.16;}
+  .sec-sub{color:var(--gris);font-size:1rem;margin:14px 0 4px;}
+  .sec-sub.lead-intro{font-size:1.08rem;color:#39414f;line-height:1.7;}
+  .hl{color:var(--azul);font-weight:600;}
+  h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.15rem;color:var(--tinta);}
+  p{color:var(--gris);}
+  p strong,li strong,span strong{color:var(--tinta);font-weight:600;}
+
+  /* INTRO */
+  .intro-banner{display:flex;gap:18px;align-items:center;background:linear-gradient(135deg,var(--naranja-suave),#fff);border:1px solid #f3cda0;border-radius:16px;padding:22px 24px;margin-top:20px;}
+  .intro-banner .ib-ico{flex-shrink:0;width:58px;height:58px;border-radius:50%;background:#fff;border:2px solid var(--naranja);display:flex;align-items:center;justify-content:center;}
+  .intro-banner .ib-ico svg{width:30px;height:30px;}
+  .intro-banner p{margin:0;font-size:.97rem;}
+  .intro-banner p b{font-family:'Fraunces',serif;color:var(--naranja-osc);}
+
+  /* ÍNDICE */
+  .toc-card{background:linear-gradient(155deg,#003c8f,#0a59c4);border-radius:22px;padding:32px 36px;margin-bottom:26px;box-shadow:var(--sombra);color:#fff;}
+  .toc-card h4{font-family:'Fraunces',serif;font-size:1.12rem;margin-bottom:14px;color:#fff;}
+  .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .toc-grid a{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;padding:11px 13px;border-radius:11px;background:rgba(255,255,255,.09);transition:background .16s,transform .16s;font-size:.93rem;font-weight:500;}
+  .toc-grid a:hover{background:rgba(255,255,255,.22);transform:translateX(3px);}
+  .toc-grid a .tn{font-family:'Fraunces',serif;font-weight:700;color:var(--naranja);font-size:.95rem;min-width:20px;}
+
+  /* TARJETAS GENÉRICAS */
+  .cards2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px;}
+  .cards3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:22px;}
+  .gc{border:2px solid var(--linea);border-radius:18px;padding:22px;background:var(--papel);transition:border-color .2s,transform .2s;}
+  .gc:hover{border-color:var(--naranja);transform:translateY(-4px);}
+  .gc .gico{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;background:var(--naranja-suave);}
+  .gc .gico svg{width:27px;height:27px;}
+  .gc h3{font-size:1.08rem;margin-bottom:5px;}
+  .gc p{font-size:.91rem;margin:0;}
+
+  /* CALLOUT */
+  .callout{display:flex;gap:14px;border-radius:14px;padding:18px 20px;margin:20px 0 0;align-items:flex-start;font-size:.94rem;}
+  .callout svg{width:24px;height:24px;flex-shrink:0;}
+  .callout .cbody b{display:block;margin-bottom:3px;font-size:.97rem;}
+  .callout.warn{background:var(--rojo-suave);color:#8a3a30;}
+  .callout.warn b{color:var(--rojo);}
+  .callout.key{background:var(--naranja-suave);color:#7a4a14;}
+  .callout.key b{color:var(--naranja-osc);}
+  .callout.info{background:var(--azul-suave);color:#27405f;}
+  .callout.info b{color:var(--azul);}
+  .callout.go{background:var(--verde-suave);color:#235e3f;}
+  .callout.go b{color:var(--verde-osc);}
+
+  /* REGALÍAS */
+  .regalias{display:grid;gap:13px;margin-top:20px;}
+  .reg{display:flex;gap:18px;align-items:center;border-radius:16px;padding:18px 22px;border:1px solid var(--linea);}
+  .reg.propia{background:var(--verde-suave);border-color:#bce3cb;}
+  .reg.editorial{background:var(--azul-suave);border-color:var(--azul-medio);}
+  .reg.libreria{background:var(--naranja-suave);border-color:#f3cda0;}
+  .reg .reg-pct{flex-shrink:0;width:80px;text-align:center;}
+  .reg .reg-pct .big{font-family:'Fraunces',serif;font-weight:700;font-size:1.9rem;line-height:1;}
+  .reg.propia .reg-pct .big{color:var(--verde-osc);}
+  .reg.editorial .reg-pct .big{color:var(--azul);}
+  .reg.libreria .reg-pct .big{color:var(--naranja-osc);}
+  .reg .reg-pct .lbl{font-size:.66rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--gris);margin-top:3px;}
+  .reg .reg-body h3{font-size:1.05rem;margin-bottom:2px;}
+  .reg .reg-body p{font-size:.88rem;margin:0;}
+  .reg .reg-body .split{font-size:.8rem;color:var(--gris);margin-top:4px;}
+  .reg .reg-body .split b{color:var(--tinta);}
+
+  /* APUESTA */
+  .apuesta{background:linear-gradient(150deg,#003c8f,#0a59c4);border-radius:20px;padding:32px 34px;margin-top:22px;color:#fff;position:relative;overflow:hidden;}
+  .apuesta .ap-blob{position:absolute;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(248,143,56,.3),transparent 70%);top:-90px;right:-70px;}
+  .apuesta .ap-ico{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;margin-bottom:13px;position:relative;z-index:2;}
+  .apuesta .ap-ico svg{width:28px;height:28px;}
+  .apuesta h3{color:#fff;font-size:1.25rem;margin-bottom:9px;position:relative;z-index:2;}
+  .apuesta p{color:#dbe6f6;font-size:.95rem;position:relative;z-index:2;margin-bottom:9px;}
+  .apuesta p:last-child{margin-bottom:0;}
+  .apuesta p strong{color:#ffd9b3;}
+
+  /* CONTACTOS */
+  .contactos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+  .contacto{border:1px solid var(--linea);border-radius:15px;padding:20px;background:var(--papel);transition:transform .18s,box-shadow .18s;}
+  .contacto:hover{transform:translateY(-3px);box-shadow:var(--sombra-sm);}
+  .contacto .ct-head{display:flex;align-items:center;gap:11px;margin-bottom:9px;}
+  .contacto .ct-ico{width:42px;height:42px;border-radius:11px;flex-shrink:0;background:var(--azul-suave);display:flex;align-items:center;justify-content:center;}
+  .contacto .ct-ico svg{width:22px;height:22px;}
+  .contacto .ct-role{font-size:.71rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--naranja-osc);}
+  .contacto .ct-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.08rem;color:var(--tinta);}
+  .contacto p{font-size:.88rem;margin-bottom:9px;}
+  .contacto .ct-data{display:flex;flex-direction:column;gap:5px;}
+  .contacto .ct-data a{display:inline-flex;align-items:center;gap:7px;font-size:.86rem;font-weight:600;color:var(--azul);text-decoration:none;}
+  .contacto .ct-data a svg{width:14px;height:14px;flex-shrink:0;}
+  .verify{background:#fff3cd;color:#8a6d00;border:1px dashed #d9b94a;border-radius:5px;font-size:.66rem;font-weight:700;padding:1px 6px;letter-spacing:.02em;}
+  .editor-note{margin-top:18px;background:#fffaf0;border:1px dashed #e0c068;border-radius:12px;padding:13px 16px;font-size:.85rem;color:#7a5e10;}
+  .editor-note b{color:#8a6d00;}
+
+  /* COMUNIDAD / REDES */
+  .social-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px;}
+  .social{display:flex;gap:13px;align-items:center;border:1px solid var(--linea);border-radius:14px;padding:16px 18px;background:#fff;text-decoration:none;transition:transform .18s,box-shadow .18s,border-color .18s;}
+  .social:hover{transform:translateY(-3px);box-shadow:var(--sombra-sm);border-color:var(--naranja);}
+  .social .sico{width:46px;height:46px;border-radius:13px;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+  .social .sico svg{width:25px;height:25px;}
+  .si-ig{background:linear-gradient(135deg,#f9ce5a,#ee2a7b 55%,#6228d7);}
+  .si-tt{background:#111;}
+  .social .stxt b{display:block;font-family:'Fraunces',serif;font-weight:600;color:var(--tinta);font-size:1rem;}
+  .social .stxt span{font-size:.84rem;color:var(--gris);}
+  .comunidad-banner{margin-top:14px;background:linear-gradient(135deg,var(--naranja-suave),var(--naranja-claro));border:1px solid #f3cda0;border-radius:16px;padding:22px 24px;}
+  .comunidad-banner .cb-head{display:flex;gap:14px;align-items:center;margin-bottom:11px;}
+  .comunidad-banner .cb-ico{width:52px;height:52px;border-radius:14px;flex-shrink:0;background:#fff;display:flex;align-items:center;justify-content:center;}
+  .comunidad-banner .cb-ico svg{width:28px;height:28px;}
+  .comunidad-banner .cb-tag{font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--naranja-osc);}
+  .comunidad-banner .cb-title{font-family:'Fraunces',serif;font-weight:600;color:var(--tinta);font-size:1.12rem;}
+  .comunidad-banner p{font-size:.92rem;margin-bottom:14px;}
+  .comunidad-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(145deg,#25d366,#1aa851);color:#fff;text-decoration:none;font-weight:700;font-size:.95rem;padding:13px 22px;border-radius:12px;transition:transform .16s,box-shadow .16s;box-shadow:0 6px 18px -8px rgba(37,211,102,.7);}
+  .comunidad-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px -8px rgba(37,211,102,.8);}
+  .comunidad-btn svg{width:21px;height:21px;color:#fff;}
+
+  /* FAQ */
+  details{border:1px solid var(--linea);border-radius:13px;margin-bottom:10px;overflow:hidden;background:var(--papel);transition:border-color .18s;}
+  details[open]{border-color:var(--naranja);box-shadow:var(--sombra-sm);}
+  summary{cursor:pointer;padding:17px 20px;font-weight:600;color:var(--tinta);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px;font-size:.97rem;}
+  summary::-webkit-details-marker{display:none;}
+  summary:hover{color:var(--naranja-osc);}
+  .qmark{flex-shrink:0;width:26px;height:26px;border-radius:8px;background:var(--naranja-suave);color:var(--naranja-osc);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.2rem;transition:transform .22s,background .22s;}
+  details[open] .qmark{transform:rotate(45deg);background:var(--naranja);color:#fff;}
+  .answer{padding:0 20px 18px;color:var(--gris);font-size:.92rem;}
+  .answer p{margin-bottom:8px;}
+  .answer p:last-child{margin-bottom:0;}
+
+  /* CIERRE */
+  .closing{background:linear-gradient(155deg,#003c8f,#0a59c4);border:none;text-align:center;color:#fff;position:relative;overflow:hidden;}
+  .closing .blob{opacity:.7;}
+  .closing .cl-ico{width:64px;height:64px;border-radius:18px;margin:0 auto 18px;background:rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;position:relative;z-index:2;}
+  .closing .cl-ico svg{width:34px;height:34px;}
+  .closing h2{color:#fff;position:relative;z-index:2;}
+  .closing p{color:#d7e3f5;position:relative;z-index:2;max-width:540px;margin:14px auto 0;}
+  .closing .sign{font-family:'Fraunces',serif;font-style:italic;font-size:1.2rem;color:#fff;margin-top:22px;position:relative;z-index:2;}
+
+  /* FOOTER */
+  footer{text-align:center;padding:30px 20px 44px;color:var(--gris);font-size:.83rem;}
+  footer .logo{font-family:'Fraunces',serif;font-weight:700;color:var(--azul);font-size:1rem;}
+
+  @media(max-width:680px){
+    .card{padding:32px 22px;}
+    .toc-card{padding:26px 22px;}
+    .toc-grid,.cards2,.cards3,.contactos,.social-grid{grid-template-columns:1fr;}
+    .hero{padding:52px 20px 140px;}
+    .float-el{display:none;}
+    .sec-head{gap:12px;}
+    .sec-ico{width:48px;height:48px;}
+    .intro-banner{flex-direction:column;text-align:center;}
+    .reg{flex-direction:column;text-align:center;gap:10px;}
+    .apuesta{padding:26px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="blob b1"></span>
+  <span class="blob b2"></span>
+  <!-- cohete -->
+  <svg class="float-el f1" width="46" height="46" viewBox="0 0 24 24" fill="none"><path d="M12 3c4 2 6 6 6 11l-3 3H9l-3-3c0-5 2-9 6-11z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2" stroke="#fff" stroke-width="1.6"/><path d="M9 17l-2 4M15 17l2 4" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+  <!-- megáfono -->
+  <svg class="float-el f2" width="44" height="44" viewBox="0 0 24 24" fill="none"><path d="M3 10v4h4l8 5V5l-8 5z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M18 8a5 5 0 010 8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
+  <!-- libros pila -->
+  <svg class="float-el f3" width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="4" y="15" width="16" height="5" rx="1" stroke="#fff" stroke-width="1.6"/><rect x="6" y="10" width="12" height="5" rx="1" stroke="#fff" stroke-width="1.6"/><rect x="8" y="5" width="8" height="5" rx="1" stroke="#fff" stroke-width="1.6"/></svg>
+
+  <div class="hero-inner">
+    <span class="badge">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 2 6 6 6 11l-3 3H9l-3-3c0-5 2-9 6-11z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      Manual del autor · Tu libro casi está listo
+    </span>
+    <h1>Tu libro está por nacer: <em>¿y ahora qué?</em></h1>
+    <p class="lead">Tu obra ya entró a imprenta. Mientras la esperás, te contamos todo lo que viene: distribución, ventas, difusión, ferias y las personas que te van a acompañar.</p>
+    <div class="hero-mark">Editorial Dunken · 30 años junto al autor independiente</div>
+  </div>
+  <div class="scroll-cue">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- INTRO -->
+  <section class="card">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 2 6 6 6 11l-3 3H9l-3-3c0-5 2-9 6-11z" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2" stroke="#d8730f" stroke-width="1.7"/><path d="M9 17l-2 4M15 17l2 4" stroke="#d8730f" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+      <div><div class="eyebrow">La recta final</div><h2>Tu libro casi está listo</h2></div>
+    </div>
+    <p class="sec-sub lead-intro">Tu obra ya fue autorizada y entró a <span class="hl">imprenta y encuadernación</span>. Sabemos que este momento es pura emoción y también un poco de ansiedad: falta poco, pero la espera se siente. Por eso armamos esta guía — para que mientras tu libro se imprime, <span class="hl">vayas conociendo todo lo que viene después</span> y llegues preparado/a a la etapa más linda: que tu libro encuentre lectores.</p>
+    <div class="intro-banner">
+      <div class="ib-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16.5h.01" stroke="#d8730f" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#d8730f" stroke-width="1.7"/></svg></div>
+      <p><b>Paciencia, falta poquito:</b> la impresión y encuadernación llevan su tiempo, es completamente normal. En cuanto los ejemplares lleguen a la editorial, te vamos a contactar para coordinar la entrega. Mientras tanto, leé esta guía con calma: te va a ayudar a llegar con todo pensado.</p>
+    </div>
+  </section>
+
+  <!-- ÍNDICE -->
+  <nav class="toc-card">
+    <h4>🚀 Qué vas a encontrar acá</h4>
+    <div class="toc-grid">
+      <a href="#entrega"><span class="tn">1</span> Cuando el libro llega</a>
+      <a href="#distribucion"><span class="tn">2</span> Distribución y ventas</a>
+      <a href="#ganancias"><span class="tn">3</span> Cómo se reparten las ventas</a>
+      <a href="#panel"><span class="tn">4</span> Seguir todo en el Panel</a>
+      <a href="#difusion"><span class="tn">5</span> Difusión: redes y prensa</a>
+      <a href="#colaboradores"><span class="tn">6</span> Reseñas y colaboradores</a>
+      <a href="#eventos"><span class="tn">7</span> Presentación y Feria del Libro</a>
+      <a href="#apuesta"><span class="tn">8</span> Publicar es una apuesta</a>
+      <a href="#contactos"><span class="tn">9</span> A quién escribirle</a>
+      <a href="#faq"><span class="tn">10</span> Preguntas frecuentes</a>
+    </div>
+  </nav>
+
+  <!-- 1. CUANDO EL LIBRO LLEGA -->
+  <section class="card" id="entrega">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+      <div><div class="eyebrow">El gran momento</div><h2>Cuando el libro llega</h2></div>
+    </div>
+    <p class="sec-sub">Apenas tu libro pase por impresión y encuadernación, los ejemplares llegan a la editorial. Ahí empieza todo lo que sigue:</p>
+
+    <div class="cards3">
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="13" rx="2" stroke="#d8730f" stroke-width="1.7"/><path d="M4 10h16" stroke="#d8730f" stroke-width="1.7"/><path d="M9 3v4M15 3v4" stroke="#f88f38" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Te avisamos</h3>
+        <p>En cuanto los ejemplares lleguen, te contactamos para coordinar la entrega o el envío.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d8730f" stroke-width="1.7"/><path d="M12 7v10M14.5 9.5a2.5 2 0 00-5 .3c0 2.7 5 1.5 5 4.2a2.5 2 0 01-5 .3" stroke="#d8730f" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h3>Definís el precio</h3>
+        <p>Como autor, vos fijás el precio de venta de tu libro. Te orientamos para que sea competitivo.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l1.5-5h15L21 9M3 9h18M4 9v11h16V9" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3>Decidís la distribución</h3>
+        <p>Elegís cuántos ejemplares dejás en distribución y cuántos te llevás para vender por tu cuenta.</p>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#004aad" stroke-width="1.7"/><path d="M12 11v5" stroke="#004aad" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="8" r="1.2" fill="#004aad"/></svg>
+      <div class="cbody"><b>Andá pensando el precio</b>El precio de venta debe cubrir tus costos y a la vez ser competitivo. Un buen ejercicio mientras esperás: compará con libros de formato, cantidad de páginas y género similares al tuyo. Así llegás con una idea clara cuando toque definirlo.</div>
+    </div>
+  </section>
+
+  <!-- 2. DISTRIBUCIÓN Y VENTAS -->
+  <section class="card" id="distribucion">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7h13l5 5v5h-3M3 7v10h2M16 7v5h5" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/><circle cx="7.5" cy="17" r="2" stroke="#f88f38" stroke-width="1.7"/><circle cx="17.5" cy="17" r="2" stroke="#f88f38" stroke-width="1.7"/></svg></div>
+      <div><div class="eyebrow">Dónde se vende tu libro</div><h2>Distribución y ventas</h2></div>
+    </div>
+    <p class="sec-sub">Tu libro puede llegar a los lectores por varios canales. Y algo importante: <strong>vos sos el dueño de tu obra</strong> y decidís cómo se distribuye.</p>
+
+    <div class="cards2">
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="3" stroke="#d8730f" stroke-width="1.7"/><path d="M3.5 19a5.5 5.5 0 0111 0" stroke="#d8730f" stroke-width="1.7" stroke-linecap="round"/><circle cx="17" cy="8" r="2.4" stroke="#f88f38" stroke-width="1.7"/><path d="M14.5 18a4.5 4.5 0 016.5-4" stroke="#f88f38" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Venta por tu cuenta</h3>
+        <p>Te llevás los ejemplares que quieras y los vendés vos: a tu comunidad, en presentaciones, donde quieras. Esa venta es 100% tuya.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#d8730f" stroke-width="1.7"/><path d="M9 3v18" stroke="#d8730f" stroke-width="1.7"/></svg></div>
+        <h3>Librería web Dunken</h3>
+        <p>Tu libro disponible en nuestra tienda online, al alcance de cualquier lector.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="13" rx="2" stroke="#d8730f" stroke-width="1.7"/><path d="M7 6V4h10v2" stroke="#d8730f" stroke-width="1.7"/></svg></div>
+        <h3>Plataformas online</h3>
+        <p>Mercado Libre, Amazon y Buscalibre — alcance nacional e internacional, las 24 horas.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l1.5-5h15L21 9M3 9h18M4 9v11h16V9" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3>Librerías físicas y cadenas</h3>
+        <p>Según tu tirada, tu libro puede llegar a librerías locales y grandes cadenas de todo el país.</p>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="8" stroke="#004aad" stroke-width="1.7"/><path d="M12 9v4l3 2" stroke="#004aad" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 2h6" stroke="#004aad" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="cbody"><b>Cómo funciona la distribución a librerías</b>La editorial ofrece tu libro a las librerías y cadenas con las que tiene convenio. Cada librería elige de los listados según su programación y decide cuántos ejemplares acepta. Es un proceso con varias instancias que puede llevar entre 2 y 3 meses. Tené en cuenta que la editorial no controla en qué estante se ubica el libro, y algunas librerías pueden devolver ejemplares. Si querés que tu obra esté en una zona puntual —tu provincia, tu barrio—, avisanos.</div>
+    </div>
+  </section>
+
+  <!-- 3. GANANCIAS -->
+  <section class="card" id="ganancias">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d8730f" stroke-width="1.7"/><path d="M12 7v10M14.5 9.5a2.5 2 0 00-5 .3c0 2.7 5 1.5 5 4.2a2.5 2 0 01-5 .3" stroke="#d8730f" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+      <div><div class="eyebrow">Las ganancias</div><h2>Cómo se reparten las ventas</h2></div>
+    </div>
+    <p class="sec-sub">El reparto depende de <strong>por dónde se vendió</strong> cada ejemplar. Así de claro:</p>
+
+    <div class="regalias">
+      <div class="reg propia">
+        <div class="reg-pct"><div class="big">100%</div><div class="lbl">para vos</div></div>
+        <div class="reg-body">
+          <h3>Venta por tu cuenta</h3>
+          <p>Todo lo que vendas vos directamente es íntegramente tuyo.</p>
+        </div>
+      </div>
+      <div class="reg editorial">
+        <div class="reg-pct"><div class="big">50%</div><div class="lbl">para vos</div></div>
+        <div class="reg-body">
+          <h3>Venta por la editorial</h3>
+          <p>Por las ventas en los canales de Dunken recibís la mitad del precio.</p>
+          <div class="split"><b>Reparto:</b> 50% autor · 50% editorial</div>
+        </div>
+      </div>
+      <div class="reg libreria">
+        <div class="reg-pct"><div class="big">50%</div><div class="lbl">para vos</div></div>
+        <div class="reg-body">
+          <h3>Venta por librerías externas</h3>
+          <p>También conservás la mitad; el resto se reparte entre editorial y librería.</p>
+          <div class="split"><b>Reparto:</b> 50% autor · 20% editorial · 30% librería</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout key">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d8730f" stroke-width="1.7"/><path d="M12 8v8M9 11l3-3 3 3" stroke="#d8730f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="cbody"><b>La consignación dura 2 años</b>Tu libro queda en distribución durante dos años y participa de la Feria del Libro en ese período. Cumplido el plazo, si quedan ejemplares en la editorial, te contactamos para que los retires y los sigas comercializando, o para coordinar su donación a bibliotecas populares.</div>
+    </div>
+  </section>
+
+  <!-- 4. PANEL -->
+  <section class="card" id="panel">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="13" rx="2" stroke="#d8730f" stroke-width="1.7"/><path d="M9 21h6M12 17v4" stroke="#d8730f" stroke-width="1.7" stroke-linecap="round"/><path d="M7 12l3-3 2 2 4-4" stroke="#f88f38" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+      <div><div class="eyebrow">Tu herramienta</div><h2>Seguí todo en tu Panel de Autor</h2></div>
+    </div>
+    <p class="sec-sub">El Panel de Autor es tu centro de control. Una vez que el libro está en circulación, ahí gestionás toda su vida comercial:</p>
+
+    <div class="cards2">
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" stroke="#d8730f" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Ventas y stock</h3>
+        <p>Ves cuántos ejemplares se vendieron, en qué canales y qué stock queda disponible.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#d8730f" stroke-width="1.7"/><path d="M8 9h8M8 13h8M8 17h5" stroke="#f88f38" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Liquidaciones</h3>
+        <p>Pedís el cobro de tus ventas — siempre desde el panel, por transferencia a tu CBU.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d8730f" stroke-width="1.7"/><path d="M12 7v10" stroke="#d8730f" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Cambio de precio</h3>
+        <p>Actualizás el precio de venta cuando lo necesites.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11l18-7-7 18-3-7-8-4z" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3>Reseñas y dónde se vende</h3>
+        <p>Ves si tu libro fue solicitado por colaboradores y en qué librerías está disponible.</p>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#004aad" stroke-width="1.7"/><path d="M12 11v5" stroke="#004aad" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="8" r="1.2" fill="#004aad"/></svg>
+      <div class="cbody"><b>Todo el detalle, en su propio manual</b>El Panel de Autor tiene su guía dedicada, con el paso a paso de cómo entrar, pedir liquidaciones y gestionar tu libro. Si todavía no la leíste, pedísela a la editorial o consultá el Manual del Panel de Autor.</div>
+    </div>
+  </section>
+
+  <!-- 5. DIFUSIÓN -->
+  <section class="card" id="difusion">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 10v4h4l8 5V5l-8 5z" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/><path d="M18 8a5 5 0 010 8" stroke="#d8730f" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+      <div><div class="eyebrow">Que tu libro se conozca</div><h2>Difusión: redes y prensa</h2></div>
+    </div>
+    <p class="sec-sub">Un libro se vende cuando se conoce. La editorial difunde tu obra, pero <strong>tu participación es lo que más mueve la aguja</strong>. Hoy las redes sociales son una herramienta enorme.</p>
+
+    <div class="callout key">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" stroke="#d8730f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="cbody"><b>Tu comunidad es tu mejor canal</b>Muchas veces, a un autor le rinde más venderle directamente a su comunidad —seguidores, conocidos, lectores cercanos— que esperar las ventas de las grandes librerías. Mové tu libro en tus redes, mostralo, contá su historia. Cada persona de tu círculo es un lector potencial, y esa venta es 100% tuya.</div>
+    </div>
+
+    <p class="sec-sub" style="margin-top:24px;">La editorial también difunde tu obra en sus canales — más de 100 mil seguidores entre todas las redes. Seguinos y etiquetanos para amplificar tu alcance:</p>
+    <div class="social-grid">
+      <a class="social" href="https://www.instagram.com/editorial.dunken" target="_blank" rel="noopener">
+        <div class="sico si-ig"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5.5" stroke="#fff" stroke-width="1.9"/><circle cx="12" cy="12" r="4" stroke="#fff" stroke-width="1.9"/><circle cx="17" cy="7" r="1.3" fill="#fff"/></svg></div>
+        <div class="stxt"><b>Instagram</b><span>@editorial.dunken</span></div>
+      </a>
+      <a class="social" href="https://www.tiktok.com/@editorialdunken" target="_blank" rel="noopener">
+        <div class="sico si-tt"><svg viewBox="0 0 24 24" fill="none"><path d="M14 4v9.5a3.5 3.5 0 11-3.5-3.5M14 7.5A5 5 0 0019 11" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="stxt"><b>TikTok</b><span>@editorialdunken</span></div>
+      </a>
+    </div>
+
+    <div class="callout info">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#004aad" stroke-width="1.7"/><path d="M3.5 6l8.5 7 8.5-7" stroke="#004aad" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      <div class="cbody"><b>¿Querés impulsar tu libro con publicidad?</b>Si te interesa hacer campañas en Meta (Instagram y Facebook) para darle más visibilidad a tu obra, la editorial puede orientarte. Escribile a <strong>Silvina</strong>, que se ocupa de esa área. <span class="verify">contacto de Silvina a confirmar</span></div>
+    </div>
+  </section>
+
+  <!-- 6. COLABORADORES -->
+  <section class="card" id="colaboradores">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5.3L20 9l-4 4 1 6-5-2.8L7 19l1-6-4-4 5.6-.7z" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+      <div><div class="eyebrow">La comunidad lectora</div><h2>Reseñas y colaboradores</h2></div>
+    </div>
+    <p class="sec-sub">Editorial Dunken tiene una comunidad de más de mil <strong>colaboradores</strong> — los llamamos <em>Dunkfluencers</em>. Son lectores y creadores de contenido activos en redes que ayudan a dar visibilidad a los libros.</p>
+
+    <div class="cards3">
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="#d8730f" stroke-width="1.7"/><path d="M8 9h8M8 13h8M8 17h5" stroke="#f88f38" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Qué hacen</h3>
+        <p>Solicitan ejemplares, los leen y publican reseñas, videos y unboxings en sus redes.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v6M12 15v6M3 12h6M15 12h6" stroke="#d8730f" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="#f88f38" stroke-width="1.8"/></svg></div>
+        <h3>Por qué suma</h3>
+        <p>Las reseñas difunden tu obra, generan interés y la acercan a nuevos lectores.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="13" rx="2" stroke="#d8730f" stroke-width="1.7"/><path d="M9 21h6M12 17v4" stroke="#d8730f" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Cómo lo seguís</h3>
+        <p>En tu Panel de Autor ves si tu libro fue solicitado por algún Dunkfluencer para reseña.</p>
+      </div>
+    </div>
+
+    <div class="callout go">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L20 7" stroke="#178045" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="cbody"><b>Una parte de tu tirada va a difusión</b>Al distribuir tu libro, se reservan algunos ejemplares para prensa y colaboradores: justamente para alimentar este circuito de reseñas. Es una inversión en que tu obra se conozca. Y si conocés bookfluencers o creadores de contenido literario, podés invitarlos a sumarse a la comunidad de colaboradores de Dunken.</div>
+    </div>
+  </section>
+
+  <!-- 7. EVENTOS -->
+  <section class="card" id="eventos">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 21V5a2 2 0 012-2h9l5 5v13" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 21v-6h8v6" stroke="#f88f38" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+      <div><div class="eyebrow">Encuentros con lectores</div><h2>Presentación y Feria del Libro</h2></div>
+    </div>
+    <p class="sec-sub">Más allá de las ventas, hay dos momentos muy especiales que tu libro te va a regalar: presentarlo y llevarlo a la feria.</p>
+
+    <div class="cards2">
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 10v4h4l8 5V5l-8 5z" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/><path d="M18 8a5 5 0 010 8" stroke="#d8730f" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3>Presentación en la editorial</h3>
+        <p>Dunken tiene un salón propio donde podés presentar tu libro ante unas 80 personas. Es una linda manera de celebrar tu obra y de impulsar la edición — y se ofrece sin costo.</p>
+      </div>
+      <div class="gc">
+        <div class="gico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 21V8l8-5 8 5v13" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 21v-7h6v7" stroke="#f88f38" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+        <h3>Feria del Libro de Buenos Aires</h3>
+        <p>Dunken participa todos los años con stand propio en el Pabellón principal. Tu libro se vende ahí durante los dos años de consignación, y vas a poder firmar ejemplares.</p>
+      </div>
+    </div>
+
+    <div class="callout key">
+      <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="16" rx="2" stroke="#d8730f" stroke-width="1.7"/><path d="M4 9h16M9 3v4M15 3v4" stroke="#d8730f" stroke-width="1.7" stroke-linecap="round"/><path d="M9 14l2 2 4-4" stroke="#f88f38" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="cbody"><b>Cómo y cuándo anotarte para firmar en la feria</b>La Feria del Libro de Buenos Aires se realiza en La Rural, en general entre fines de abril y comienzos de mayo. El año en que sale tu libro te invitamos a firmar ejemplares en nuestro stand. El turno de firma <strong>se reserva con anticipación</strong>: cuando se acerque la fecha, la editorial te va a avisar para que te anotes. Estate atento/a a los mensajes por mail y WhatsApp para no perderte tu lugar.</div>
+    </div>
+
+    <div class="callout info">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#004aad" stroke-width="1.7"/><path d="M12 11v5" stroke="#004aad" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="8" r="1.2" fill="#004aad"/></svg>
+      <div class="cbody"><b>Para coordinar tu presentación</b>Si querés presentar tu libro en la editorial, podés coordinar la fecha con el área de presentaciones y eventos. Escribile a <strong>Tomás</strong>, que se encarga de organizarlas. <span class="verify">nombre y contacto del área de presentaciones a confirmar</span></div>
+    </div>
+  </section>
+
+  <!-- 8. LA APUESTA -->
+  <section class="card" id="apuesta">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5.3L20 9l-4 4 1 6-5-2.8L7 19l1-6-4-4 5.6-.7z" stroke="#d8730f" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+      <div><div class="eyebrow">Una mirada honesta</div><h2>Publicar es una apuesta</h2></div>
+    </div>
+    <p class="sec-sub">Preferimos ser sinceros con vos, porque creemos que un autor informado disfruta más el camino.</p>
+
+    <div class="apuesta">
+      <span class="ap-blob"></span>
+      <div class="ap-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.4 5.3L20 9l-4 4 1 6-5-2.8L7 19l1-6-4-4 5.6-.7z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+      <h3>Lo que conviene saber de entrada</h3>
+      <p>La edición independiente, vista solo desde lo económico, <strong>rara vez recupera su costo con la venta de los libros</strong>. Vender ejemplares cuesta, las librerías tardan en pagar, y el contexto no siempre ayuda. Es honesto decirlo.</p>
+      <p>Pero un libro es mucho más que eso. Publicar es <strong>una apuesta profesional, personal y hasta espiritual</strong>. Es dejar una huella, abrir puertas, conectar con lectores. De una obra publicada pueden surgir oportunidades que hoy ni imaginás.</p>
+      <p>Tomalo así: como <strong>una inversión en tu camino como autor</strong>. Y dentro de esa apuesta, hay muchísimo por hacer para que tu libro se lea y llegue lejos — y de eso se trata todo lo que viene.</p>
+    </div>
+  </section>
+
+  <!-- 9. CONTACTOS -->
+  <section class="card" id="contactos">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.6" stroke="#d8730f" stroke-width="1.7"/><path d="M5 20a7 7 0 0114 0" stroke="#d8730f" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+      <div><div class="eyebrow">El equipo que te acompaña</div><h2>A quién escribirle</h2></div>
+    </div>
+    <p class="sec-sub">En esta etapa pueden contactarte distintas personas de la editorial — cada área tiene su función. Estos son los contactos clave:</p>
+
+    <div class="contactos">
+      <div class="contacto">
+        <div class="ct-head">
+          <div class="ct-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 10v4h4l8 5V5l-8 5z" stroke="#004aad" stroke-width="1.7" stroke-linejoin="round"/><path d="M18 8a5 5 0 010 8" stroke="#004aad" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <div><div class="ct-role">Presentaciones y eventos</div><div class="ct-name">Tomás</div></div>
+        </div>
+        <p>Para coordinar la presentación de tu libro en el salón de la editorial. <span class="verify">nombre y contacto a confirmar</span></p>
+      </div>
+      <div class="contacto">
+        <div class="ct-head">
+          <div class="ct-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8M15 7h6v6" stroke="#004aad" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="ct-role">Publicidad en Meta</div><div class="ct-name">Silvina</div></div>
+        </div>
+        <p>Para campañas de publicidad en Instagram y Facebook que impulsen tu obra. <span class="verify">contacto a confirmar</span></p>
+      </div>
+      <div class="contacto">
+        <div class="ct-head">
+          <div class="ct-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#004aad" stroke-width="1.7"/><path d="M9.5 9.5a2.5 2.5 0 014.5 1.5c0 1.7-2.5 2-2.5 3.5" stroke="#004aad" stroke-width="1.7" stroke-linecap="round"/><circle cx="11.9" cy="17" r="1.1" fill="#f88f38"/></svg></div>
+          <div><div class="ct-role">Consultorías y asesoramiento</div><div class="ct-name">Belén</div></div>
+        </div>
+        <p>Si querés consultorías o asesoramiento específico para tu obra, escribile a Belén.</p>
+        <div class="ct-data">
+          <a href="mailto:dunkenbelen@gmail.com"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#004aad" stroke-width="2"/><path d="M3.5 6l8.5 7 8.5-7" stroke="#004aad" stroke-width="2" stroke-linejoin="round"/></svg>dunkenbelen@gmail.com</a>
+          <a href="https://wa.me/5491138902425"><svg viewBox="0 0 32 32" fill="#004aad"><path d="M16 3C9 3 3.5 8.6 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3.3 29l7-1.8c1.9 1 4 1.6 6.2 1.6h.1c6.9 0 12.5-5.6 12.5-12.5C29 8.6 23.4 3 16 3zm0 22.8c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4a10.3 10.3 0 01-1.6-5.6c0-5.7 4.7-10.4 10.4-10.4 2.8 0 5.4 1.1 7.3 3a10.3 10.3 0 013 7.4c0 5.7-4.7 10.4-10.4 10.4zm5.7-7.8c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9 0 1.7 1.2 3.4 1.4 3.6.2.2 2.5 3.8 6 5.3 2.2 1 3.1 1 4.2.9.7-.1 1.8-.7 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>+54 9 11 3890-2425</a>
+        </div>
+      </div>
+      <div class="contacto">
+        <div class="ct-head">
+          <div class="ct-ico"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="3" stroke="#004aad" stroke-width="1.7"/><circle cx="9.5" cy="12" r="1.3" fill="#004aad"/><circle cx="14.5" cy="12" r="1.3" fill="#004aad"/><path d="M12 6V3M9 3h6" stroke="#004aad" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+          <div><div class="ct-role">Dudas del día a día</div><div class="ct-name">Gervasio</div></div>
+        </div>
+        <p>El asistente de IA de Dunken, disponible siempre, para resolver dudas rápidas sobre tu libro y el proceso.</p>
+      </div>
+    </div>
+
+    <div class="editor-note">
+      <b>Nota para la editorial — verificar antes de publicar:</b> confirmar el nombre y el contacto del área de presentaciones (en los documentos internos figura como "Alexis", acá se puso "Tomás" según lo indicado) y el contacto de Silvina para publicidad en Meta. El mail y WhatsApp de Belén se cargaron según lo indicado; conviene chequear que estén vigentes.
+    </div>
+  </section>
+
+  <!-- COMUNIDAD -->
+  <section class="card" id="comunidad">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11a8 8 0 018-8M4 11a8 8 0 008 8M12 3a8 8 0 018 8M20 11a8 8 0 01-8 8" stroke="#d8730f" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="11" r="2.2" fill="#f88f38"/></svg></div>
+      <div><div class="eyebrow">No estás solo/a en esto</div><h2>Sumate a la comunidad de autores</h2></div>
+    </div>
+    <p class="sec-sub">Esta etapa se transita mejor acompañado/a. Sumate a la Comunidad de autores Dunken para conectar con otros escritores que están en el mismo camino.</p>
+
+    <div class="comunidad-banner">
+      <div class="cb-head">
+        <div class="cb-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="3" stroke="#d8730f" stroke-width="1.8"/><path d="M3.5 19a5.5 5.5 0 0111 0" stroke="#d8730f" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="8" r="2.4" stroke="#d8730f" stroke-width="1.8"/><path d="M14.5 18a4.5 4.5 0 016.5-4" stroke="#d8730f" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div>
+          <div class="cb-tag">Grupo de WhatsApp</div>
+          <div class="cb-title">Comunidad de autores Dunken</div>
+        </div>
+      </div>
+      <p>Un espacio para conectar con otros escritores, apoyarse mutuamente, intercambiar estrategias de difusión y compartir las redes de cada uno para crecer juntos. Justo lo que necesitás ahora que tu libro sale al mundo.</p>
+      <a class="comunidad-btn" href="https://chat.whatsapp.com/FGhJ7NayHx41s3BGePuryz" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9 3 3.5 8.6 3.5 15.5c0 2.4.7 4.7 1.9 6.7L3.3 29l7-1.8c1.9 1 4 1.6 6.2 1.6h.1c6.9 0 12.5-5.6 12.5-12.5C29 8.6 23.4 3 16 3zm0 22.8c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4a10.3 10.3 0 01-1.6-5.6c0-5.7 4.7-10.4 10.4-10.4 2.8 0 5.4 1.1 7.3 3a10.3 10.3 0 013 7.4c0 5.7-4.7 10.4-10.4 10.4zm5.7-7.8c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.6-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9 0 1.7 1.2 3.4 1.4 3.6.2.2 2.5 3.8 6 5.3 2.2 1 3.1 1 4.2.9.7-.1 1.8-.7 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+        Unirme a la comunidad de autores
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="card" id="faq">
+    <div class="sec-head">
+      <div class="sec-ico"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#d8730f" stroke-width="1.8"/><path d="M9.5 9.5a2.5 2.5 0 014.5 1.5c0 1.7-2.5 2-2.5 3.5" stroke="#d8730f" stroke-width="1.8" stroke-linecap="round"/><circle cx="11.9" cy="17" r="1.1" fill="#f88f38"/></svg></div>
+      <div><div class="eyebrow">Dudas habituales</div><h2>Preguntas frecuentes</h2></div>
+    </div>
+    <p class="sec-sub">Las consultas que más aparecen en esta etapa.</p>
+    <div style="margin-top:20px;">
+      <details>
+        <summary>¿Cuánto falta para tener mi libro en mano?<span class="qmark">+</span></summary>
+        <div class="answer"><p>Tu libro está en impresión y encuadernación, que llevan su tiempo. En cuanto los ejemplares lleguen a la editorial, te contactamos para coordinar la entrega o el envío. Te pedimos paciencia: ya falta poco.</p></div>
+      </details>
+      <details>
+        <summary>¿Puedo quedarme con todos mis ejemplares?<span class="qmark">+</span></summary>
+        <div class="answer"><p>Sí. Sos el dueño de tu obra y podés llevarte todos los ejemplares para venderlos por tu cuenta. No estás obligado a dejar libros en distribución. Todo lo que vendas vos es 100% tuyo.</p></div>
+      </details>
+      <details>
+        <summary>¿Cuánto gano por cada libro vendido?<span class="qmark">+</span></summary>
+        <div class="answer"><p>Depende del canal. Si vendés por tu cuenta, el 100% es tuyo. Si se vende por la editorial, recibís el 50%. Si se vende en una librería externa, también conservás el 50%; el 20% es de la editorial y el 30% de la librería.</p></div>
+      </details>
+      <details>
+        <summary>¿Cómo y cuándo me anoto para firmar en la Feria del Libro?<span class="qmark">+</span></summary>
+        <div class="answer"><p>El año en que sale tu libro podés firmar ejemplares en el stand de Dunken. El turno se reserva con anticipación: cuando se acerque la fecha de la feria, la editorial te avisa para que te anotes. Estate atento/a a los mensajes por mail y WhatsApp para no perderte tu lugar.</p></div>
+      </details>
+      <details>
+        <summary>¿Cómo organizo la presentación de mi libro?<span class="qmark">+</span></summary>
+        <div class="answer"><p>Dunken tiene un salón propio donde podés presentar tu libro ante unas 80 personas, sin costo. Para coordinar la fecha, contactá al área de presentaciones y eventos de la editorial.</p></div>
+      </details>
+      <details>
+        <summary>¿Qué hago para que mi libro se conozca?<span class="qmark">+</span></summary>
+        <div class="answer"><p>Hay mucho que está en tus manos: mover tu libro en redes, venderle a tu comunidad, hacer una presentación, sumar reseñas de colaboradores, participar de la feria. La difusión activa del autor es lo que más mueve la aguja. La editorial te acompaña, pero tu impulso es clave.</p></div>
+      </details>
+      <details>
+        <summary>Quiero hacer publicidad para mi libro, ¿con quién hablo?<span class="qmark">+</span></summary>
+        <div class="answer"><p>Si te interesa hacer campañas pagas en Meta (Instagram y Facebook), la editorial puede orientarte. El contacto para esa área es Silvina. Si buscás un asesoramiento más amplio sobre tu obra, podés escribirle a Belén.</p></div>
+      </details>
+      <details>
+        <summary>¿Voy a recuperar lo que invertí en publicar?<span class="qmark">+</span></summary>
+        <div class="answer"><p>Te lo decimos con honestidad: la edición independiente, vista solo desde lo económico, rara vez recupera su costo solo con la venta de libros. Conviene tomar la publicación como una apuesta profesional y personal. Dicho esto, hay mucho que podés hacer —difusión, redes, comunidad, presentaciones, ferias— para que tu libro venda y llegue a más lectores.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CIERRE -->
+  <section class="card closing">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <div class="cl-ico"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 2 6 6 6 11l-3 3H9l-3-3c0-5 2-9 6-11z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2" stroke="#fff" stroke-width="2"/></svg></div>
+    <h2 style="font-size:clamp(1.5rem,3.6vw,2rem);">Falta poquito para tenerlo en tus manos</h2>
+    <p>Tu libro está por nacer. Mientras lo esperás, ya sabés todo lo que viene: cómo se vende, cómo se difunde, qué eventos te esperan y quién te acompaña. Llegá preparado/a a la etapa más linda — la de compartir tu obra con el mundo.</p>
+    <p class="sign">Publicar fue el comienzo. Ahora empieza lo mejor.</p>
+  </section>
+
+</div>
+
+<footer>
+  <p class="logo">Editorial Dunken</p>
+  <p>30 años al servicio del autor independiente · Tu libro casi está listo: ¿y ahora qué?</p>
+</footer>
+
+</body>
+</html>
